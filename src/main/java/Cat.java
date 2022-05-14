@@ -33,10 +33,6 @@ public class Cat {
         this.user = user;
     }
 
-    public void setUpvotes(Integer upvotes) {
-        this.upvotes = upvotes;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -54,5 +50,9 @@ public class Cat {
 
     public Integer getUpvotes() {
         return upvotes;
+    }
+
+    public void setUpvotes(Integer upvotes) {
+        this.upvotes = upvotes;
     }
 }

@@ -7,7 +7,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -16,7 +15,7 @@ public class Main {
 
     public static ObjectMapper mapper = new ObjectMapper();
 
-    public static List<Cat> filterCats(List<Cat> cats, Integer upvotes){
+    public static List<Cat> filterCats(List<Cat> cats, Integer upvotes) {
 
         Stream<Cat> cat = cats.stream()
                 .filter(upvotesFiltred -> upvotesFiltred.getUpvotes() != upvotes && upvotesFiltred.getUpvotes() > 0);
@@ -42,7 +41,8 @@ public class Main {
 
 //        Arrays.stream(response.getAllHeaders()).forEach(System.out::println);
 
-        List<Cat> cats = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Cat>>() {});
+        List<Cat> cats = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Cat>>() {
+        });
 
         cats.forEach(System.out::println);
 
